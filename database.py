@@ -1,3 +1,4 @@
+
 # ------------------------- #
 # Don't Remove Credit 
 # Ask Doubt @AU_Bot_Discussion 
@@ -68,6 +69,29 @@ def get_stats():
 def get_all_users():
     cur.execute("SELECT user_id FROM users")
     return cur.fetchall()
+
+# ===================== ADDED SAFETY FIX (ONLY ADDITION) =====================
+
+import threading
+
+db_lock = threading.Lock()
+
+def safe_execute(query, params=()):
+    """Thread-safe DB execution (prevents Render crashes)"""
+    with db_lock:
+        cur.execute(query, params)
+        conn.commit()
+
+# Optional improved wrappers (NOT replacing old code, only extra tools)
+
+def add_user_safe(uid):
+    safe_execute("INSERT OR IGNORE INTO users VALUES (?)", (uid,))
+
+def add_sticker_safe(uid, file_id, unique_id):
+    safe_execute(
+        "INSERT INTO stickers (user_id, file_id, unique_id) VALUES (?, ?, ?)",
+        (uid, file_id, unique_id)
+    )
 
 # ------------------------- #
 # Don't Remove Credit 
