@@ -49,13 +49,6 @@ DB_NAME=database.db
 
 ---
 
-## ⚠️ Important Notes
-
-- Never share your BOT_TOKEN publicly  
-- START_PIC can be a Telegram file_id or image URL  
-- DB_NAME stores bot data locally  
-- These values must be added in Render → Environment Variables
-
 ## 🤖 Bot Commands
 
 ```txt
@@ -66,6 +59,7 @@ DB_NAME=database.db
 - addchannel - ➕ Aᴅᴅ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟ (Oᴡɴᴇʀ ᴏɴʟʏ)  
 - delchannel - ❌ Rᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟ (Oᴡɴᴇʀ ᴏɴʟʏ)  
 - listchannel - 📋 Vɪᴇᴡ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟs (Oᴡɴᴇʀ ᴏɴʟʏ)
+```
 
 <details>
 <summary><h3>
@@ -117,6 +111,7 @@ After adding monitor click:
 <br><br>
 ✅ Your bot will stay alive 24/7.
 </details>
+
 
 - Developer: <a href="https://t.me/Mr_Mohammed_29"><b>ᴍᴏʜᴀᴍᴍᴇᴅ</b></a>
 - Updates : <a href="https://t.me/Anime_UpdatesAU"><b>ᴀɴɪᴍᴇ ᴜᴘᴅᴀᴛᴇs ᴀᴜ</b></a>
