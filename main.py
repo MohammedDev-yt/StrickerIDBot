@@ -9,6 +9,7 @@ import time
 
 from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID
 from keep_alive import keep_alive
+from force_sub import check_user, join_buttons
 
 # ------------------------- #
 # Don't Remove Credit 
@@ -19,26 +20,51 @@ from keep_alive import keep_alive
 from start import start_handler
 from sticker import ask_sticker, handle_sticker
 from callback import callback_handler
-from database import get_stats, get_all_users
+from database import get_stats, get_all_users, add_channel, remove_channel, get_channels
 from utils import START_TIME, VERSION 
 
 bot = Client("StickerBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 broadcast_mode = set()
 
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+
 # ================= START =================
 @bot.on_message(filters.command("start"))
 def start(_, msg):
+
+    import asyncio
+
+    loop = bot.loop
+    ok = loop.run_until_complete(check_user(bot, msg.from_user.id))
+
+    if not ok:
+        return msg.reply_text(
+            "›› ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ, sᴜʙsᴄʀɪʙᴇ ɴᴏw...",
+            reply_markup=join_buttons()
+        )
+
     start_handler(bot, msg)
 
 # ================= STICKER =================
 @bot.on_message(filters.command("stickerid"))
 def ask(_, msg):
-    ask_sticker(bot, msg)
 
-@bot.on_message(filters.sticker)
-def sticker(_, msg):
-    handle_sticker(bot, msg)
+    import asyncio
+    loop = bot.loop
+    ok = loop.run_until_complete(check_user(bot, msg.from_user.id))
+
+    if not ok:
+        return msg.reply_text(
+            "›› ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴᴇᴅ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ, sᴜʙsᴄʀɪʙᴇ ɴᴏw...",
+            reply_markup=join_buttons()
+        )
+
+    ask_sticker(bot, msg)
 
 # ================= STATS (OWNER ONLY) =================
 @bot.on_message(filters.command("stats"))
@@ -65,7 +91,7 @@ def stats(_, msg):
 📊 𝗕𝗼𝘁 𝗦𝘁𝗮𝘁𝘀
 
 👥 Tᴏᴛᴀʟ Usᴇʀs: {users}
-🎯  Tᴏᴛᴀʟ Sᴛɪᴄᴋᴇʀs: {stickers}
+🎯 Tᴏᴛᴀʟ Sᴛɪᴄᴋᴇʀs: {stickers}
 ⚡ Pɪɴɢ: {ping} ms
 ⏱ Uᴘᴛɪᴍᴇ: {uptime}
 🧬 Vᴇʀsɪᴏɴ: {VERSION}
@@ -105,6 +131,55 @@ def send_broadcast(_, msg):
     )
 
     broadcast_mode.remove(msg.from_user.id)
+
+# ================= FORCE SUB ADMIN COMMANDS =================
+
+@bot.on_message(filters.command("addchannel"))
+def addch(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return msg.reply_text("ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ")
+
+    try:
+        chat = msg.text.split(" ", 1)[1]
+    except:
+        return msg.reply_text("Usᴀɢᴇ: /addchannel @ᴄʜᴀɴɴᴇʟ")
+
+    add_channel(chat)
+    msg.reply_text(f"Added: {chat}")
+
+
+@bot.on_message(filters.command("delchannel"))
+def delch(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return msg.reply_text("ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ")
+
+    try:
+        chat = msg.text.split(" ", 1)[1]
+    except:
+        return msg.reply_text("Usᴀɢᴇ: /delchannel @ᴄʜᴀɴɴᴇʟ")
+
+    remove_channel(chat)
+    msg.reply_text(f"Removed: {chat}")
+
+
+@bot.on_message(filters.command("listchannel"))
+def listch(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return msg.reply_text("ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ")
+
+    channels = get_channels()
+
+    if not channels:
+        return msg.reply_text("Nᴏ Fᴏʀᴄᴇ Cʜᴀɴɴᴇʟs Aᴅᴅᴇᴅ")
+
+    text = "🎯 Fᴏʀᴄᴇ Cʜᴀɴɴᴇʟs Lɪsᴛ:\n\n"
+    for c in channels:
+        text += f"• {c}\n"
+
+    msg.reply_text(text)
 
 # ================= CALLBACK =================
 @bot.on_callback_query()
