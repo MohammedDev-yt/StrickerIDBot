@@ -58,6 +58,7 @@ DB_NAME=database.db
 
 ## 🤖 Bot Commands
 
+```txt
 - start - Sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ  
 - stickerid - Gᴇᴛ sᴛɪᴄᴋᴇʀ ғɪʟᴇ ID  
 - stats - Vɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs (Oᴡɴᴇʀ ᴏɴʟʏ)  
