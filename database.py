@@ -95,7 +95,36 @@ def get_all_users():
     cur.execute("SELECT user_id FROM users")
     return cur.fetchall()
 
-# ===================== ADDED SAFETY FIX (ONLY ADDITION) =====================
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+
+def add_channel(chat_id):
+    cur.execute("INSERT OR IGNORE INTO force_channels VALUES (?)", (chat_id,))
+    conn.commit()
+
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+
+def remove_channel(chat_id):
+    cur.execute("DELETE FROM force_channels WHERE chat_id=?", (chat_id,))
+    conn.commit()
+
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+
+def get_channels():
+    cur.execute("SELECT chat_id FROM force_channels")
+    return [i[0] for i in cur.fetchall()]
+# ===================== ADDED SAFETY FIX ===================== #
 
 import threading
 
