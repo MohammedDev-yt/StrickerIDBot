@@ -52,13 +52,10 @@ DB_NAME=database.db
 ## 🤖 Bot Commands
 
 ```txt
-- start - Sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ  
-- stickerid - Gᴇᴛ sᴛɪᴄᴋᴇʀ ғɪʟᴇ ID  
-- stats - Vɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs (Oᴡɴᴇʀ ᴏɴʟʏ)  
-- broadcast - Sᴇɴᴅ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs (Oᴡɴᴇʀ ᴏɴʟʏ)  
-- addchannel - ➕ Aᴅᴅ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟ (Oᴡɴᴇʀ ᴏɴʟʏ)  
-- delchannel - ❌ Rᴇᴍᴏᴠᴇ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟ (Oᴡɴᴇʀ ᴏɴʟʏ)  
-- listchannel - 📋 Vɪᴇᴡ ғᴏʀᴄᴇ sᴜʙ ᴄʜᴀɴɴᴇʟs (Oᴡɴᴇʀ ᴏɴʟʏ)
+start - Sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ  
+stickerid - Gᴇᴛ sᴛɪᴄᴋᴇʀ ғɪʟᴇ ID  
+stats - Vɪᴇᴡ ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs (Oᴡɴᴇʀ ᴏɴʟʏ)  
+broadcast - Sᴇɴᴅ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜsᴇʀs (Oᴡɴᴇʀ ᴏɴʟʏ)
 ```
 
 <details>
