@@ -17,12 +17,6 @@ CREATE TABLE IF NOT EXISTS users (
 )
 """)
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
 cur.execute("""
 CREATE TABLE IF NOT EXISTS stickers (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,28 +34,9 @@ conn.commit()
 # Owner @Mr_Mohammed_29 
 # ------------------------- #
 
-cur.execute("""
-CREATE TABLE IF NOT EXISTS force_channels (
-    chat_id TEXT PRIMARY KEY
-)
-""")
-conn.commit()
-
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
 def add_user(uid):
     cur.execute("INSERT OR IGNORE INTO users VALUES (?)", (uid,))
     conn.commit()
-
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
 
 def add_sticker(uid, file_id, unique_id):
     cur.execute(
@@ -95,36 +70,7 @@ def get_all_users():
     cur.execute("SELECT user_id FROM users")
     return cur.fetchall()
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
-def add_channel(chat_id):
-    cur.execute("INSERT OR IGNORE INTO force_channels VALUES (?)", (chat_id,))
-    conn.commit()
-
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
-def remove_channel(chat_id):
-    cur.execute("DELETE FROM force_channels WHERE chat_id=?", (chat_id,))
-    conn.commit()
-
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
-def get_channels():
-    cur.execute("SELECT chat_id FROM force_channels")
-    return [i[0] for i in cur.fetchall()]
-# ===================== ADDED SAFETY FIX ===================== #
+# ===================== ADDED SAFETY FIX (ONLY ADDITION) =====================
 
 import threading
 
@@ -136,22 +82,10 @@ def safe_execute(query, params=()):
         cur.execute(query, params)
         conn.commit()
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
-# Optional improved wrappers 
+# Optional improved wrappers (NOT replacing old code, only extra tools)
 
 def add_user_safe(uid):
     safe_execute("INSERT OR IGNORE INTO users VALUES (?)", (uid,))
-
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
 
 def add_sticker_safe(uid, file_id, unique_id):
     safe_execute(
