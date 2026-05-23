@@ -10,54 +10,51 @@ from database import get_stats
 from config import OWNER_NAME, OWNER_ID, START_PIC
 from utils import START_TIME, VERSION
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-
 def callback_handler(bot, q):
 
     data = q.data
 
     if data == "home":
-    text = f"""
+        try:
+            q.message.edit_caption(
+                caption=f"""
 ᴡᴇʟᴄᴏᴍᴇ ʙᴀᴄᴋ {q.from_user.first_name} ♡, ᴛᴏ ᴀᴅᴠᴀɴᴄᴇᴅ sᴛʀɪᴄᴋᴇʀ ɪᴅ ʙᴏᴛ
 
 ›› I ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪᴄᴋᴇʀ ᴛᴏ ɢɪᴠᴇ ɪᴅ 
+ 
 ›› Jᴜsᴛ sᴇɴᴅ ᴛʜᴇ Sᴛɪᴄᴋᴇʀ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ
+
 ›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Anime_UpdatesAU 
-"""
+""",
+                reply_markup=start_buttons()
+            )
+        except:
+            q.message.reply_photo(
+                photo=START_PIC,
+                caption=f"""
+ᴡᴇʟᴄᴏᴍᴇ ʙᴀᴄᴋ {q.from_user.first_name} ♡, ᴛᴏ ᴀᴅᴠᴀɴᴄᴇᴅ sᴛʀɪᴄᴋᴇʀ ɪᴅ ʙᴏᴛ
 
-    try:
-        q.message.edit_caption(text, reply_markup=start_buttons())
-    except:
-        q.message.edit_text(text, reply_markup=start_buttons())
+›› I ᴄᴀɴ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪᴄᴋᴇʀ ᴛᴏ ɢɪᴠᴇ ɪᴅ 
+ 
+›› Jᴜsᴛ sᴇɴᴅ ᴛʜᴇ Sᴛ𝗶𝗰𝗸𝗲𝗿 ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ
 
+›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Anime_UpdatesAU 
+""",
+                reply_markup=start_buttons()
+            )
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
-    
     elif data == "help":
         try:
             q.message.edit_caption(
-                caption="𝗵𝗼𝘄 𝘁𝗼 𝘀𝗲𝗻𝗱 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n\n𝖴𝗌𝖾 /stickerid 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗍𝗁𝖾𝗇 𝗌𝖾𝗇𝖽 𝗌𝗍𝗂𝖼𝗄𝖾𝗋",
+                caption="𝗵𝗼𝘄 𝘁𝗼 𝘀𝗲𝗻𝗱 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n\nUse /stickerid command then send sticker",
                 reply_markup=home()
             )
         except:
             q.message.edit_text(
-                "𝗵𝗼𝘄 𝘁𝗼 𝘀𝗲𝗻𝗱 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n\n𝖴𝗌𝖾 /stickerid 𝖼𝗈𝗆𝗆𝖺𝗇𝖽 𝗍𝗁𝖾𝗇 𝗌𝖾𝗇𝖽 𝗌𝗍𝗂𝖼𝗄𝖾𝗋",
+                "𝗵𝗼𝘄 𝘁𝗼 𝘀𝗲𝗻𝗱 𝘀𝘁𝗶𝗰𝗸𝗲𝗿\n\nUse /stickerid command then send sticker",
                 reply_markup=home()
             )
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
     elif data == "about":
         text = """
 ℹ️ <b>Sticker ID Bot</b>
@@ -66,7 +63,7 @@ def callback_handler(bot, q):
 📚 Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ
 💻 Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 𝟹
 ⚙️ Sᴇʀᴠᴇʀ: <a href="https://render.com/">Rᴇɴᴅᴇʀ</a> 
-🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <a href="https://t.me/Anime_UpdatesAU">Sᴛᴀʙʟᴇ ✅</a>
+🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <a href="https://t.me/BotsServerDead">Sᴛᴀʙʟᴇ ✅</a>
 👨‍💻 Pʀᴏɢʀᴀᴍᴍᴇʀ: <a href="https://t.me/Mr_Mohammed_29">Mᴏʜᴀᴍᴍᴇᴅ</a>
 📢 Uᴘᴅᴀᴛᴇs: <a href="https://t.me/Anime_UpdatesAU">Cʟɪᴄᴋ Hᴇʀᴇ</a>
 🌐 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ: <a href="https://github.com/MD-Developer-yt/StrickerIDBot">Gɪᴛʜᴜʙ</a>
@@ -99,12 +96,12 @@ def callback_handler(bot, q):
     elif data == "updates":
         try:
             q.message.edit_caption(
-                caption="›› Sᴛᴀʏ Uᴘᴅᴀᴛᴇᴅ Oɴ @Anime_UpdatesAU",
+                caption="›› Stay updated on @Anime_UpdatesAU",
                 reply_markup=home()
             )
         except:
             q.message.edit_text(
-                "›› Sᴛᴀʏ Uᴘᴅᴀᴛᴇᴅ Oɴ @Anime_UpdatesAU",
+                "›› Stay updated on @Anime_UpdatesAU",
                 reply_markup=home()
             )
 
@@ -143,11 +140,6 @@ def callback_handler(bot, q):
     elif data.startswith("copy"):
         q.answer("Cᴏᴘɪᴇᴅ ✔", show_alert=True)
 
-# ------------------------- #
-# Don't Remove Credit 
-# Ask Doubt @AU_Bot_Discussion 
-# Owner @Mr_Mohammed_29 
-# ------------------------- #
 
 # ===================== SAFETY FIX =====================
     try:
