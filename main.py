@@ -160,7 +160,7 @@ async def force_sub_checker(client, message):
             [
                 InlineKeyboardButton(
                     "📢 Join Channel",
-                    url=f"https://t.me/{channes[0].replace('@','')}"
+                    url=f"https://t.me/{channels[0].replace('@','')}"
                 )
             ]
         ])
