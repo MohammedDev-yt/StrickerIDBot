@@ -77,7 +77,7 @@ def list_fsub(_, msg):
     if msg.from_user.id != OWNER_ID:
         return
 
-    channels = get_fsub_channels()
+    channels = get_fsubs()
 
     if not channels:
         return msg.reply_text("No Force Sub channels set.")
@@ -160,7 +160,7 @@ async def force_sub_checker(client, message):
             [
                 InlineKeyboardButton(
                     "📢 Join Channel",
-                    url=f"https://t.me/{FORCE_SUB_CHANNEL.replace('@','')}"
+                    url=f"https://t.me/{channes[0].replace('@','')}"
                 )
             ]
         ])
