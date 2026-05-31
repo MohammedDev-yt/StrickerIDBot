@@ -33,7 +33,7 @@ You must set these environment variables before running the bot:
 - OWNER_ID → Your Telegram numeric ID  
 - OWNER_NAME → Your name (display in bot)  
 - START_PIC → Start image file_id or image URL  
-- MONGO_URL = your_mongodb_connection_string
+- MONGO_URL = Your MongoDB 
 - DB_NAME → Database file name (example: database.db)  
 
 ---
@@ -46,6 +46,7 @@ BOT_TOKEN=123456:ABC-DEF123456
 OWNER_ID=987654321  
 OWNER_NAME=YourName  
 START_PIC=https://example.com/image.jpg  
+MONGO_URL = your_mongodb_connection_string
 DB_NAME=database.db  
 
 ---
