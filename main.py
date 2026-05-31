@@ -100,6 +100,7 @@ def send_broadcast(_, msg):
             ok += 1
         except:
             fail += 1
+            continue 
 
     msg.reply_text(
         f"📢 𝗗𝗼𝗻𝗲\n✔ Sent: {ok}\n❌ Failed: {fail}"
@@ -115,6 +116,10 @@ def cb(_, q):
 # ================= SAVE USER (ADD HERE) =================
 @bot.on_message(filters.private)
 def save_user(_, msg):
+
+    if not msg.from_user:
+        return
+
     try:
         add_user(msg.from_user.id)
     except:
