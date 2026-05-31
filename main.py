@@ -22,6 +22,15 @@ from sticker import ask_sticker, handle_sticker
 from callback import callback_handler
 from database import add_user, get_stats, get_all_users
 from utils import START_TIME, VERSION 
+from pymongo import MongoClient
+import os
+
+MONGO_URL = os.environ.get("MONGO_URL")
+
+mongo = MongoClient(MONGO_URL)
+db = mongo["StickerBot"]
+
+fsub_col = db["force_sub"]
 
 bot = Client("StickerBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
@@ -30,24 +39,33 @@ bot = Client("StickerBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-FORCE_SUB_CHANNEL = None
 
 async def check_force_sub(client, user_id):
 
-    if not FORCE_SUB_CHANNEL:
+    # ✅ OWNER BYPASS (IMPORTANT)
+    if user_id == OWNER_ID:
         return True
 
-    try:
-        member = await client.get_chat_member(FORCE_SUB_CHANNEL, user_id)
+    channels = get_fsubs()
 
-        return member.status in [
-            ChatMemberStatus.MEMBER,
-            ChatMemberStatus.ADMINISTRATOR,
-            ChatMemberStatus.OWNER
-        ]
+    if not channels:
+        return True
 
-    except:
-        return False
+    for channel in channels:
+        try:
+            member = await client.get_chat_member(channel, user_id)
+
+            if member.status not in [
+                ChatMemberStatus.MEMBER,
+                ChatMemberStatus.ADMINISTRATOR,
+                ChatMemberStatus.OWNER
+            ]:
+                return False
+
+        except:
+            return False
+
+    return True
 
 
 @bot.on_message(filters.private & ~filters.command([
