@@ -25,6 +25,61 @@ from utils import START_TIME, VERSION
 
 bot = Client("StickerBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
+# ================= FORCE SUB (ADD HERE) =================
+
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+FORCE_SUB_CHANNEL = None
+
+async def check_force_sub(client, user_id):
+
+    if not FORCE_SUB_CHANNEL:
+        return True
+
+    try:
+        member = await client.get_chat_member(FORCE_SUB_CHANNEL, user_id)
+
+        return member.status in [
+            ChatMemberStatus.MEMBER,
+            ChatMemberStatus.ADMINISTRATOR,
+            ChatMemberStatus.OWNER
+        ]
+
+    except:
+        return False
+
+
+@bot.on_message(filters.private & ~filters.command([
+    "start", "stickerid", "stats", "broadcast"
+]))
+async def force_sub_checker(client, message):
+
+    if not message.from_user:
+        return
+
+    if not FORCE_SUB_CHANNEL:
+        return
+
+    ok = await check_force_sub(client, message.from_user.id)
+
+    if not ok:
+
+        btn = InlineKeyboardMarkup([
+            [
+                InlineKeyboardButton(
+                    "📢 Join Channel",
+                    url=f"https://t.me/{FORCE_SUB_CHANNEL.replace('@','')}"
+                )
+            ]
+        ])
+
+        return await message.reply_text(
+            "❌ Join our channel to use this bot.",
+            reply_markup=btn
+        )
+
+
 broadcast_mode = set()
 
 # ================= START =================
