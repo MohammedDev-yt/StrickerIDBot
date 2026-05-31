@@ -35,14 +35,86 @@ fsub_col = db["force_sub"]
 bot = Client("StickerBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 # ================= FORCE SUB (ADD HERE) =================
+@bot.on_message(filters.command("fsub"))
+def set_fsub(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return
+
+    if len(msg.command) < 2:
+        return msg.reply_text("Use: /fsub @channel")
+
+    channel = msg.command[1]
+
+    if not channel.startswith("@"):
+        channel = "@" + channel
+
+    add_fsub(channel)
+
+    msg.reply_text(f"✅ Added FSub: {channel}")
+
+@bot.on_message(filters.command("nofsub"))
+def del_fsub(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return
+
+    if len(msg.command) < 2:
+        return msg.reply_text("Use: /nofsub @channel")
+
+    channel = msg.command[1]
+
+    if not channel.startswith("@"):
+        channel = "@" + channel
+
+    remove_fsub(channel)
+
+    msg.reply_text(f"❌ Removed FSub: {channel}")
+
+@bot.on_message(filters.command("listfsub"))
+def list_fsub(_, msg):
+
+    if msg.from_user.id != OWNER_ID:
+        return
+
+    channels = get_fsub_channels()
+
+    if not channels:
+        return msg.reply_text("No Force Sub channels set.")
+
+    text = "📢 Force Sub Channels:\n\n"
+    for ch in channels:
+        text += f"• {ch}\n"
+
+    msg.reply_text(text)
 
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+def get_fsubs():
+    data = fsub_col.find_one({"_id": "fsubs"})
+    if not data:
+        return []
+    return data.get("channels", [])
+
+
+def add_fsub(channel):
+    fsub_col.update_one(
+        {"_id": "fsubs"},
+        {"$addToSet": {"channels": channel}},
+        upsert=True
+    )
+
+
+def remove_fsub(channel):
+    fsub_col.update_one(
+        {"_id": "fsubs"},
+        {"$pull": {"channels": channel}}
+    )
 
 async def check_force_sub(client, user_id):
 
-    # ✅ OWNER BYPASS (IMPORTANT)
+    # ✅ OWNER BYPASS
     if user_id == OWNER_ID:
         return True
 
@@ -76,7 +148,8 @@ async def force_sub_checker(client, message):
     if not message.from_user:
         return
 
-    if not FORCE_SUB_CHANNEL:
+    channels = get_fsubs()
+    if not channels:
         return
 
     ok = await check_force_sub(client, message.from_user.id)
