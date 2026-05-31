@@ -10,9 +10,15 @@ from buttons import copy_buttons
 def ask_sticker(_, msg):
     msg.reply_text("𝖭𝗈𝗐 𝖲𝖾𝗇𝖽 𝖠 𝖲𝗍𝗋𝗂𝖼𝗄𝖾𝗋")
 
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+    
 def handle_sticker(_, msg):
 
-    if not msg or not msg.sticker:
+    if not msg or not msg.sticker or not msg.from_user:
         return
 
     uid = msg.from_user.id
