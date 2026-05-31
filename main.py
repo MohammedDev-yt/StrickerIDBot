@@ -130,14 +130,12 @@ async def check_force_sub(client, user_id):
 
 # ================= FORCE SUB CHECKER (IMPORTANT FIX) =================
 
-@bot.on_message(filters.private)
+@bot.on_message(filters.private & ~filters.command([
+    "start", "stickerid", "stats", "broadcast"
+]))
 async def force_sub_checker(client, message):
 
     if not message.from_user:
-        return
-
-    # allow commands to pass
-    if message.text and message.text.startswith("/"):
         return
 
     channels = get_fsubs()
@@ -260,6 +258,12 @@ def send_broadcast(_, msg):
     if msg.text.startswith("/"):
         return
 
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
+
     users = get_all_users()
 
     ok, fail = 0, 0
@@ -274,6 +278,12 @@ def send_broadcast(_, msg):
     msg.reply_text(f"Done\nSent: {ok}\nFailed: {fail}")
 
     broadcast_mode.remove(msg.from_user.id)
+
+# ------------------------- #
+# Don't Remove Credit 
+# Ask Doubt @AU_Bot_Discussion 
+# Owner @Mr_Mohammed_29 
+# ------------------------- #
 
 @bot.on_callback_query()
 def cb(_, q):
@@ -298,7 +308,6 @@ def save_user(_, msg):
         add_user(msg.from_user.id)
     except:
         pass
-
 
 # ------------------------- #
 # Don't Remove Credit 
