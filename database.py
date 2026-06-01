@@ -70,7 +70,7 @@ def get_all_users():
     cur.execute("SELECT user_id FROM users")
     return cur.fetchall()
 
-# ===================== ADDED SAFETY FIX (ONLY ADDITION) =====================
+# ===================== ADDED SAFETY FIX  =====================
 
 import threading
 
