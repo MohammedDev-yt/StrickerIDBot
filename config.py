@@ -25,7 +25,7 @@ START_PIC = os.environ.get(
 # Owner @Mr_Mohammed_29 
 # ------------------------- #
 
-# ================= VALIDATION (ADDED ONLY - DO NOT REMOVE EXISTING CODE) =================
+# ================= VALIDATION =================
 
 if API_ID == 0:
     print("❌ ERROR: API_ID not set in environment variables")
