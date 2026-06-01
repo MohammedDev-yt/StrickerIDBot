@@ -92,7 +92,6 @@ def add_sticker_safe(uid, file_id, unique_id):
         "INSERT INTO stickers (user_id, file_id, unique_id) VALUES (?, ?, ?)",
         (uid, file_id, unique_id)
     )
-
 # ------------------------- #
 # Don't Remove Credit 
 # Ask Doubt @AU_Bot_Discussion 
