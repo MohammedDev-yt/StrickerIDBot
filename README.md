@@ -23,7 +23,7 @@
 
 ---
 
-## 🔧 Environment Variables (Render / VPS Setup)
+## 🔧 Environment Variables (Render)
 
 You must set these environment variables before running the bot:
 
