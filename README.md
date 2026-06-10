@@ -25,18 +25,19 @@
 
 ✨ Features
 
-🆔 Get Sticker File ID instantly
-🎯 Get Sticker Unique ID
-📊 User & Sticker Statistics
-📢 Broadcast Messages to All Users
-👑 Owner-Only Admin Commands
-⚡ Fast & Lightweight Performance
-🔄 24/7 Deploy Support
-🤖 Built with Pyrogram
-📱 Mobile-Friendly Interface
-🚀 Easy Setup & Deployment
-🛡️ SQLite Database Support
-🎨 Clean & Simple UI
+- 🆔 Get Sticker File ID instantly
+- 🎯 Get Sticker Unique ID
+- 📊 User & Sticker Statistics
+- 📢 Broadcast Messages to All Users
+- 👑 Owner-Only Admin Commands
+- 💾 User Database Management
+- ⚡ Fast & Lightweight Performance
+- 🤖 Built with Pyrogram
+- 📱 Mobile-Friendly Interface
+- 🚀 Easy Setup & Deployment
+- 🛡️ SQLite Database Support
+- 🔄 24/7 Hosting Support
+
 
 ## 🔧 Environment Variables (Render)
 
