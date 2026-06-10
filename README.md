@@ -24,6 +24,7 @@
 ---
 
 ✨ Features
+
 🆔 Get Sticker File ID instantly
 🎯 Get Sticker Unique ID
 📊 User & Sticker Statistics
