@@ -23,6 +23,20 @@
 
 ---
 
+✨ Features
+🆔 Get Sticker File ID instantly
+🎯 Get Sticker Unique ID
+📊 User & Sticker Statistics
+📢 Broadcast Messages to All Users
+👑 Owner-Only Admin Commands
+⚡ Fast & Lightweight Performance
+🔄 24/7 Deploy Support
+🤖 Built with Pyrogram
+📱 Mobile-Friendly Interface
+🚀 Easy Setup & Deployment
+🛡️ SQLite Database Support
+🎨 Clean & Simple UI
+
 ## 🔧 Environment Variables (Render)
 
 You must set these environment variables before running the bot:
