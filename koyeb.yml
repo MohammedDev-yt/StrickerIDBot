@@ -1,0 +1,35 @@
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
+
+service:
+  name: sticker-id-bot
+  type: worker
+
+  env:
+    - name: API_ID
+      value: "your_api_id"
+
+    - name: API_HASH
+      value: "your_api_hash"
+
+    - name: BOT_TOKEN
+      value: "your_bot_token"
+
+    - name: OWNER_ID
+      value: "your_telegram_id"
+
+    - name: DB_NAME
+      value: "database.db"
+
+  build:
+    type: docker
+
+  run:
+    command: python main.py
+
+# ------------------------- #
+# Don't Remove Credit 
+# Owner @Mr_Mohammed_29
+# ------------------------- #
