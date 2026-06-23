@@ -4,8 +4,8 @@
 # ------------------------- #
 
 service:
-  name: sticker-id-bot
-  type: worker
+  name: StrickerIDBot
+  type: web
 
   env:
     - name: API_ID
