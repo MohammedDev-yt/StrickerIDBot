@@ -66,9 +66,9 @@ def stats(_, msg):
 📊 𝗕𝗼𝘁 𝗦𝘁𝗮𝘁𝘀
 
 👥 Tᴏᴛᴀʟ Usᴇʀs: {users}
-🎯  Tᴏᴛᴀʟ Sᴛɪᴄᴋᴇʀs: {stickers}
+🎯 Tᴏᴛᴀʟ Sᴛɪᴄᴋᴇʀs: {stickers}
 ⚡ Pɪɴɢ: {ping} ms
-⏱ Uᴘᴛɪᴍᴇ: {uptime}
+⏱  Uᴘᴛɪᴍᴇ: {uptime}
 🧬 Vᴇʀsɪᴏɴ: {VERSION}
 """)
 
@@ -123,7 +123,7 @@ def save_user(_, msg):
 # ================= START BOT =================
 if __name__ == "__main__":
     keep_alive()
-    print("Bot Running...")
+    print("Bot Is Alive ,ʙʏ @Aero_Unity..")
     bot.run()
 
 # ------------------------- #
