@@ -45,7 +45,7 @@ def start_handler(bot, message):
  
  ›› Jᴜsᴛ sᴇɴᴅ ᴛʜᴇ Sᴛɪᴄᴋᴇʀ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ
 
- ›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Anime_UpdatesAU 
+ ›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Aero_Unity 
 """,
             reply_markup=start_buttons()
         )
