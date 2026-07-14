@@ -16,7 +16,7 @@
   <a href="https://t.me/Mr_Mohammed_29" target="_blank">
     <img src="https://img.shields.io/badge/Developer-Mohammed-purple?style=for-the-badge&logo=telegram&logoColor=white" alt="Developer"/>
   </a>
-  <a href="https://t.me/AU_Bot_Discussion" target="_blank">
+  <a href="https://t.me/Aero_Unity" target="_blank">
     <img src="https://img.shields.io/badge/Support-Group-blueviolet?style=for-the-badge&logo=telegram&logoColor=white" alt="Support Group"/>
   </a>
 </p>
@@ -144,11 +144,11 @@ After adding monitor click:
 
 
 - Developer: <a href="https://t.me/Mr_Mohammed_29"><b>ᴍᴏʜᴀᴍᴍᴇᴅ</b></a>
-- Updates : <a href="https://t.me/Anime_UpdatesAU"><b>ᴀɴɪᴍᴇ ᴜᴘᴅᴀᴛᴇs ᴀᴜ</b></a>
+- Updates : <a href="https://t.me/Aero_Unity"><b>ᴀᴇʀᴏ ᴜɴɪᴛʏ</b></a>
 
 ## Fork and ⭐ this repo and you must give stars to the Developer 
 <p align="center">
   If you like this bot, give it a ⭐ on GitHub to support the project!  
-  <a href="https://github.com/MD-Developer-yt/StrickerIDBot" target="_blank">
+  <a href="https://github.com/MohammedDev-yt/StrickerIDBot" target="_blank">
   </a>
 </p>
