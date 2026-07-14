@@ -24,7 +24,7 @@ def callback_handler(bot, q):
  
 ›› Jᴜsᴛ sᴇɴᴅ ᴛʜᴇ Sᴛɪᴄᴋᴇʀ ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ
 
-›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Anime_UpdatesAU 
+›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Aero_Unity 
 """,
                 reply_markup=start_buttons()
             )
@@ -38,7 +38,7 @@ def callback_handler(bot, q):
  
 ›› Jᴜsᴛ sᴇɴᴅ ᴛʜᴇ Sᴛ𝗶𝗰𝗸𝗲𝗿 ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴍᴀɢɪᴄ
 
-›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Anime_UpdatesAU 
+›› ᴘᴏᴡᴇʀᴇᴅ ʙʏ : @Aero_Unity 
 """,
                 reply_markup=start_buttons()
             )
@@ -63,10 +63,10 @@ def callback_handler(bot, q):
 📚 Lɪʙʀᴀʀʏ: Pʏʀᴏɢʀᴀᴍ
 💻 Lᴀɴɢᴜᴀɢᴇ: Pʏᴛʜᴏɴ 𝟹
 ⚙️ Sᴇʀᴠᴇʀ: <a href="https://render.com/">Rᴇɴᴅᴇʀ</a> 
-🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <a href="https://t.me/BotsServerDead">Sᴛᴀʙʟᴇ ✅</a>
+🚀 Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <a href="https://t.me/Aero_Unity">Sᴛᴀʙʟᴇ ✅</a>
 👨‍💻 Pʀᴏɢʀᴀᴍᴍᴇʀ: <a href="https://t.me/Mr_Mohammed_29">Mᴏʜᴀᴍᴍᴇᴅ</a>
-📢 Uᴘᴅᴀᴛᴇs: <a href="https://t.me/Anime_UpdatesAU">Cʟɪᴄᴋ Hᴇʀᴇ</a>
-🌐 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ: <a href="https://github.com/MD-Developer-yt/StrickerIDBot">Gɪᴛʜᴜʙ</a>
+📢 Uᴘᴅᴀᴛᴇs: <a href="https://t.me/Aero_Unity">Cʟɪᴄᴋ Hᴇʀᴇ</a>
+🌐 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ: <a href="https://github.com/MohammedDev-yt/StrickerIDBot">Gɪᴛʜᴜʙ</a>
 """
         try:
             q.message.edit_caption(
