@@ -5,10 +5,6 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=36BCF7F1&width=435&lines=Welcome+To+Sticker+ID+Bot;It+is+Advance+Sticker+ID+Bot;Bot+is+Made+By+Mohammed)](https://git.io/typing-svg)
 
----
-
----
-
 <p align="center">
   <a href="https://www.python.org/" target="_blank">
     <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3"/>
